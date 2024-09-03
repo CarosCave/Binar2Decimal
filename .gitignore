@@ -1,0 +1,20 @@
+# CMake build directory
+/cmake-build-*/
+
+# IDE-specific files
+/.idea/
+
+# Compiler generated files
+*.o
+*.so
+*.a
+*.out
+*.exe
+*.dll
+*.dylib
+
+# Temporary files
+*.log
+*.tmp
+*.swp
+*~
