@@ -9,4 +9,6 @@ add_executable(Binar2Decimal main.c
         Binaer.c
         Binaer.h
         func.c
-        func.h)
+        func.h
+        Hex.c
+        Hex.h)

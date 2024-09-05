@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 #include "Binaer.h"
+#include "Hex.h"
 
 int main(void) {
     int auswahl = 0;
@@ -42,12 +43,19 @@ int main(void) {
         case 2:
             returnValue = b2d(zahlEingabe);
             break;
+        case 3:
+            d2h(zahlEingabe);
+            break;
         default:
             printf("Irgendwas ist schief gelaufen.\n");
             break;
         }
         printf("%i = %i\n", zahlEingabe, returnValue);
-        system("pause");
-        system("cls");
+        if (_WIN32 || _WIN64)
+        {
+            system("pause");
+            system("cls");
+        }
+        
     }
 }
