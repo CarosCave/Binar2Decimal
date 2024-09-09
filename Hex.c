@@ -64,12 +64,49 @@ void d2h(char* out, int zahl)
     }
 }
 
-int h2d(char hexZahl[10])
+int h2d(char* hexZahl)
 {
     int retVal = 0;
+    int tempZahl = 0;
+    int hexLaenge = strlen(hexZahl);
+    int schleifendurchlauf = 0;
 
-    retVal = strlen(hexZahl);
-    printf("%i", retVal);
+    for (int i = hexLaenge-1; i >= 0; i--)
+    {
+        if (hexZahl[i] >= '0' && hexZahl[i] <= '9')
+        {
+            //tempZahl = (int)hexZahl[i];
+            tempZahl = hexZahl[i] - '0';
+        }
+        else if (hexZahl[i] == 'A' || hexZahl[i] == 'a')
+        {
+            tempZahl = 10;
+        }
+        else if (hexZahl[i] == 'B' || hexZahl[i] == 'b')
+        {
+            tempZahl = 11;
+        }
+        else if (hexZahl[i] == 'C' || hexZahl[i] == 'c')
+        {
+            tempZahl = 12;
+        }
+        else if (hexZahl[i] == 'D' || hexZahl[i] == 'd')
+        {
+            tempZahl = 13;
+        }
+        else if (hexZahl[i] == 'E' || hexZahl[i] == 'E')
+        {
+            tempZahl = 14;
+        }
+        else if (hexZahl[i] == 'F' || hexZahl[i] == 'F')
+        {
+            tempZahl = 15;
+        }
+
+        retVal = retVal + tempZahl * power(16, schleifendurchlauf);
+
+        schleifendurchlauf++;
+    }
     
     return retVal;
 }

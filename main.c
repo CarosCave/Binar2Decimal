@@ -5,14 +5,21 @@
 #include "Hex.h"
 
 int main(void) {
-    //char test[10];
     // Deaktivieren der Pufferung von stdout
     setbuf(stdout, NULL);
     int auswahl = 0;
     int zahlEingabe = 0;
     char hexEingabe[10];
+    char hexTempEingabe[10];
     int returnValue;
     char returnString[10];
+    // Initialisieren des Char Arrays
+    for (int i = 0; i < 10; i++)
+    {
+        hexEingabe[i] = 0;
+        hexTempEingabe[i] = 0;
+        returnString[i] = 0;
+    }
 
     while (1)
     {
@@ -40,8 +47,6 @@ int main(void) {
             scanf("%s", &hexEingabe);
         }
         
-    
-    
         switch (auswahl) {
         case 1:
             returnValue = d2b(zahlEingabe);
@@ -70,7 +75,7 @@ int main(void) {
         }
         else if (auswahl == 4)
         {
-            printf("%s = %i\n", returnString, zahlEingabe);
+            printf("%s = %i\n", hexEingabe, returnValue);
         }
         //char* string = d2h(20);
         //printf("%s\n", string);
